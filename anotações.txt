@@ -1,0 +1,82 @@
+﻿LaTeX: https://miktex.org/
+Editor LaTeX (LaTeX Studio): https://www.texstudio.org/
+
+### Estrutura de linha
+    ## \            -> Linhas que iniciam com \ são comandos LaTeX
+    ## %            -> Linhas que iniciam com % são comentários
+        Obs: Para utilizar % no texto deve-se utilizar \%
+
+### Configurações
+    ## \documentclass{}
+        # book, letter, article, report etc...
+
+    ## \setlength{}{}
+        # setlength{\parindent}1.5cm}               -> Define o tamanho da indentação como 1.5cm
+        # setlength{\parskip}{1cm}                  -> Define o tamanho entre dois parágrafos para 1cm
+
+
+    ## \begin{document}
+    ## \end{document}
+
+### Pacotes
+    # usepackage[a4paper, margin=2cm]{geometry}     -> Define a margem da página.
+        a4paper, a3paper, a2paper                               -> Determina o tipo de papel a ser utilizado
+        margin, left, right, top, bottom                        -> Define ou a margem completa da página ou uma margem especifica
+    # usepackage[utf8]{inputenc}                    -> Define o codificador do arquivo como o UTF-8, para utilização de acentuações.
+    # usepackage[brazil]{babel}                     -> Traduz as constantes do LaTeX para português brasileiro
+    # usepackage{indentfirst}                       -> Adiciona uma indentação para o primeiro parágrafo do documento
+    # usepackage{xcolor}                            -> Permite a modificação de cor do texto
+        \definecolor{NOMEDACOR}{rgb}{1,0,0}                     -> Cria uma nova cor para o xcolor com um nome que você escolher
+
+        \textcolor{red}{Texto vermelho}                         -> Define a cor do texto como vermelho
+        \colorbox{gray}{Fundo cinza}                            -> Define um fundo cinza para o texto
+        \pagecolor{yellow}                                      -> Define a cor da página como amarelo
+
+        Dica: Se utilizarmos usepackage[usenames, dvipsnames]{xcolor} temos mais opções de cores.
+
+    # usepackage{setspace}                          -> Adiciona um pacote que permite adicionar alguns padrões de espaçamento no documento
+        \simplespacing                                          -> Aplica o espaçamento normal para as linhas
+        \onehalfspacing                                         -> Aplica o espaçamento de um e-mail entre as linhas
+        \doublespacing                                          -> Adiciona um espaçamento duplo entre as linhas
+        \setstretch{3}                                          -> Define o espaçamento entre as linhas como 3.
+
+        Dica: Também é possivel definir o espaçamento de um trecho especifico do texto, para isso utiliza-se as tags begin/end passando como parametro o mesmo comando de espaçamento porém no singular, exemplo \begin{simplespace} ou \begin{onehalfspace} ou \begin{spacing}{3} para espaçamento personalizado.
+
+### Atalhos
+    F5              -> Compila e visualiza o arquivo PDF
+    F6              -> Apenas compila sem visualizar
+    F7              -> Apenas visualiza sem compilar
+
+    CTRL + T            -> Comenta o trecho selecionado do texto
+    CTRL + N            -> Cria um novo documento
+    CTRL + SCROLL       -> Zoom-in ou zoom-out
+    CTRL + S            -> Salva o documento
+
+### Formatações
+    ## \part{Parte I}
+    ## \chapter{Este é um capitulo}
+    ## \section{Esta é uma seção}
+    ## \subsection{Esta é uma subseção}
+    ## \subsubsection{Esta é uma subsubseção}
+
+    ## Parágrafo            -> Necessita deixar uma linha em branco para iniciar um novo parágrafo.
+    ## \noindent            -> Remove a indentação de um parágrafo.
+    ## \newline ou \\       -> Quebra de linha
+    ## \newpage             -> Quebra de página
+
+    ## \textbf{texto em negrito}                                -> Define para negrito o trecho do texto
+    ## \textit{texto em italico}                                -> Define para itálico o trecho do texto
+    ## \underline{Texto sublinhado}                             -> Sublinha o trecho do texto
+
+    ## \begin{flushleft} Texto a esquerda \end{flushleft}       -> Alinha o texto a esquerda
+    ## \begin{center} Texto centralizado \end{center}           -> Alinha o texto ao centro
+    ## \begin{flushright} Texto a esquerda \end{flushright}     -> Alinha o texto a direita
+
+    ## {\tiny Texto pequeno.}           -> Escreve o trecho com o menor tamanho de fonte
+    ## {\Huge Texto grande.}            -> Escreve o trecho com o maior tamanho de fonte
+
+    ## \vspace{2cm}             -> Cria um espaço vazio vertical de 2cm
+    ## \hspace{2cm}             -> Cria um espaço vazio horizontal de 2cm
+
+    Dicas:
+        - Caso não quiser numerar algum item e desatribuir a sua filiação, pode-se usar *, exemplo: \chapter*{Este é um capitulo sem numeração e filiação.}
